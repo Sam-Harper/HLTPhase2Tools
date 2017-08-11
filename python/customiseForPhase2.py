@@ -3,6 +3,7 @@ import FWCore.ParameterSet.Config as cms
 import HLTrigger.Phase2.customiseMuonsForPhase2      as muons
 import HLTrigger.Phase2.customiseTrackingForPhase2   as tracking
 import HLTrigger.Phase2.customiseValidationForPhase2 as val
+import HLTrigger.Phase2.customiseEgammaPixelMatchingForPhase2 as egamma
 
 def customiseTrigger(process):
 
@@ -10,6 +11,7 @@ def customiseTrigger(process):
     process = muons.useRpcSimDigis(process)
     process = muons.addGemsToL2(process)
     process = tracking.customiseTracking(process)
+    process = egamma.customisePixelMatching(process)
     # process = muons.removeHLTIsoMu24Steps(process)
     # process = muons.removeHLTIsoTkMu24Steps(process)
     # process = muons.removeHLTMu50Steps(process)
